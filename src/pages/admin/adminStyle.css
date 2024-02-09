@@ -1,0 +1,92 @@
+.application-admin .img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #023436;
+}
+.applicaiton-admin .img img {
+  width: 100%;
+  height: 100%;
+}
+.recruit-approve {
+  display: flex;
+  gap: 1rem;
+}
+.roles-admin {
+  width: 100%;
+  margin: 0px auto;
+}
+.admin-page {
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 80%;
+  background-color: #fff;
+}
+.active {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+}
+
+/* Admin application responsive styling */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .admin-page {
+    width: 90%;
+    margin: 0px auto;
+  }
+  .applicaiton-admin {
+    padding: 3px 5px !important;
+  }
+  .application-admin .img {
+    width: 30px;
+    height: 30px;
+  }
+  .application-admin .name h3,
+  .application-admin .percentage h4 {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+
+/* admin roles styling */
+.admin-roles{
+  width : 85%;
+  margin: 0px auto;
+  margin-top: 2rem ;
+}
+.post-section{
+  background-color: #fff;
+  padding: 2rem 3rem;
+}
+
+/* Recruit role */
+.recruit-role{
+  padding: 3rem;
+  width: 85%;
+  margin: 3rem auto;
+  background-color: #fff;
+}
+.recruit-role .btns{
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.role-controller{
+  width : 85%;
+  margin: 0px auto;
+  margin-top: 1rem;
+}
+.dropdown{
+  padding: 5px;
+}
+.assign-list{
+  padding: 2rem;
+  width: 85%;
+  margin: 2rem auto;
+  background-color: #fff;
+}
+.create-btn{
+  float: right;
+}

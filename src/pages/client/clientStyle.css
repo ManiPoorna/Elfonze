@@ -1,0 +1,179 @@
+.profile-page {
+  margin-top: 3rem;
+  padding: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin: 3rem;
+  border-radius: 5px;
+}
+.profile-page .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+}
+.profile-page .top .left {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: antiquewhite;
+}
+.profile-page .top .right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-page .user-details .bottom {
+  padding: 1rem 0rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  flex-flow: row wrap;
+}
+
+.delete-account {
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin: 3rem;
+}
+
+
+/*  Profile responsive design  */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .profile-page{
+    margin: 1rem 10px;
+    padding: 1rem;
+  }
+  .profile-page .top{
+    gap :1rem;
+  }
+  .profile-page .top .left {
+    height: 120px;
+  }
+  .greeting h1{
+    font-size: 18px;
+  }
+  .delete-account {
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+
+/* applccaiton styling */
+.application,.application-admin {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #f6fff8;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+.eye-icon{
+  /* padding: 17px; */
+  position: absolute;
+  left: -20px;
+}
+.application .checkbox input {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+.view-resume {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .application{
+    padding: 5px 6px;
+  }
+  .application .name h3,.application .percentage h4{
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .application .approve {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+
+/* Client roles styling */
+.client-roles {
+  width: 90%;
+  margin: 0 auto 4rem auto;
+  background-color: #fff;
+  padding: 1rem;
+}
+.application-footer{
+  padding: 10px 3rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px -3px 5px 0px #00000017;
+  background-color: #fff;
+}
+.application-footer .left{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.application-footer .btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* Application responsive styling */
+@media screen and (min-width: 320px) and (max-width: 425px) {
+  .application-footer{
+    top: 0;
+    gap: 1rem;
+    padding: 0px 1rem !important;
+    height: 80px !important;
+  }
+  .application-footer .left h2{
+    font-size: 16px;
+  }
+  .btn{
+    font-size: 12px;
+    padding: 6px;
+  }
+  .client-roles{
+    margin: 0rem auto 10px auto !important;
+  }
+  .application-footer .btns {
+    gap: 10px !important;
+  }
+  .application-footer .left{
+    flex-direction: column;
+  }
+  .comment-box{
+    width: 350px !important;
+  }
+}
+
+
+/* Comment box styling */
+.comment-box{
+  margin: auto auto;
+  margin-top: 5rem;
+  width: 500px;
+  padding: 2.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+#reject{
+  width : 20px;
+  height : 20px;
+}
