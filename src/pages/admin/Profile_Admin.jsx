@@ -1,8 +1,55 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { TextField } from "@mui/material";
 import Header from "../../ParentContComponents/Header";
+import { useEffect,useState } from "react";
 
-function Profile_Admin({typeOfUser}) {
+function Profile_Admin({ typeOfUser }) {
+
+  const [message, setMessage] = useState();
+
+
+  const fetchUserDetails = async () => {
+    const resp = await fetch(" ");
+    const data = await resp.json();
+  };
+
+
+  const handleUpload = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    const file = event.target.files[0];
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      setMessage(data.message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+
+
+  useEffect(() => {
+    fetchUserDetails();
+  }, []);
+
+  const updateDetails = async () => {
+    const resp = await fetch(" ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(""),
+    });
+    const data = await resp.json();
+  };
+
   return (
     <>
       <Header
@@ -14,8 +61,25 @@ function Profile_Admin({typeOfUser}) {
       <div className="profile-page">
         <div className="user-details">
           <div className="top">
-            <div className="left">
-              <img src="" alt="" />
+            <div className="image">
+              <div className="left">
+                <img src="" alt="" />
+              </div>
+              <form id="uploadForm" encType="multipart/form-data">
+                <label className="btn input-btn" htmlFor="upload-resume">
+                  Select Profile
+                </label>
+                <span> </span>
+                <input
+                  onChange={handleUpload}
+                  style={{ display: "none" }}
+                  id="upload-resume"
+                  type="file"
+                />
+                <button className="btn" type="submit">
+                  Upload
+                </button>
+              </form>
             </div>
             <div className="right">
               <div className="greeting">
@@ -44,7 +108,9 @@ function Profile_Admin({typeOfUser}) {
               id="outlined-basic"
               variant="outlined"
             />
-            <button className="btn">Update Profile</button>
+            <button onClick={() => updateDetails()} className="btn">
+              Update Profile
+            </button>
           </div>
         </div>
       </div>
@@ -56,4 +122,4 @@ function Profile_Admin({typeOfUser}) {
   );
 }
 
-export default Profile_Admin
+export default Profile_Admin;

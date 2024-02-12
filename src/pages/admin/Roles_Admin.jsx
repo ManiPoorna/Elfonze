@@ -45,7 +45,7 @@ function Roles_Admin() {
       ) : role === "manage" ? (
         <>
           <Createrole role="Update" />
-          <Recruitrole />
+          {/* <Recruitrole /> */}
         </>
       ) : (
         ""

@@ -22,29 +22,29 @@ function Header({ typeOfBtn, btn1, btn2,array }) {
 
   function handleNavigate(event) {
     if (event.target.innerText === "Find Jobs") {
-      navigate("/user/userid/jobs");
+      navigate("/user/:userid/jobs");
     } else if (event.target.innerText === "My Dashboard") {
-      navigate("/user/userid/dashboard");
+      navigate("/user/:userid/dashboard");
     } else if (event.target.innerText === "My Profile") {
-      navigate("/user/userid/profile");
+      navigate("/user/:userid/profile");
     } else if (event.target.innerText === "My_Profile") {
-      navigate("/admin/adminid/profile");
+      navigate("/admin/:adminid/profile");
     } else if (event.target.innerText === "Manage Requests") {
-      navigate("/admin/adminid/clients");
+      navigate("/admin/:adminid/clients");
     } else if (event.target.innerText === "My DashBoard") {
-      navigate("/admin/adminid/dashboard");
+      navigate("/admin/:adminid/dashboard");
     }
     else if (event.target.innerText === "My Dashboard(C)") { 
-      navigate("/client/clientid/dashboard");
+      navigate("/client/:clientid/dashboard");
       console.log(event.target.innerText);
     }
     else if (event.target.innerText === "My Profile(C)") {
-      navigate("/client/clientid/profile");
+      navigate("/client/:clientid/profile");
       console.log(event.target.innerText);
     }
     else if (event.target.innerText === "Pending Applications") {
       console.log(event.target.innerText);
-      navigate("/client/clientid/roles");
+      navigate("/client/:clientid/roles");
     }
   }
   return (

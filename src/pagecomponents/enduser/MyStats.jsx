@@ -13,6 +13,7 @@ function MyStats() {
       const resp = await fetch(/* some api call to fetch user details */);
       const data = await resp.json();
       setStats(data);
+      console.log("Statistics data=> ",data)
     };
   }, []);
 

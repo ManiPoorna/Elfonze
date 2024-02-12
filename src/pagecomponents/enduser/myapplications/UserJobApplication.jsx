@@ -10,6 +10,7 @@ function UserJobApplication({ application, deleteUserJobApplication,serialnumber
       const resp = await fetch(/* some api call to check job status */);
       const data = await resp.json();
       setJobStatus(data);
+      console.log("User Application data",data)
     };
   }, []);
 

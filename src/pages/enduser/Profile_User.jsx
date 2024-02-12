@@ -1,16 +1,56 @@
+/* eslint-disable no-unused-vars */
 import { TextField } from '@mui/material';
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { useParams } from 'react-router-dom';
 import Header from '../../ParentContComponents/Header';
 
 function Profile_User() {
 
-    const obj = useParams();
+  const [message, setMessage] = useState();
+  
+  const obj = useParams();
+  
+  const fetchUserDetails = async () => {
+    const resp = await fetch(" ");
+    const data = await resp.json();
+  };
 
-    useEffect(() => {
-        console.log(obj);
-    },[ obj ]);
+  useEffect(() => {
+    fetchUserDetails();
+    console.log(obj);
+  },[ obj ]);
+
+
+  const handleUpload = async (event) => {
+    event.preventDefault();
+    const formData = new FormData();
+    const file = event.target.files[0];
+    formData.append("file", file);
+
+    try {
+      const response = await fetch("http://localhost:8080/upload", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await response.json();
+      setMessage(data.message);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+
+
+  const updateDetails = async () => {
+    const resp = await fetch(" ", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(""),
+    });
+    const data = await resp.json();
+  };
 
   return (
     <>
@@ -23,8 +63,25 @@ function Profile_User() {
       <div className="profile-page">
         <div className="user-details">
           <div className="top">
-            <div className="left">
-              <img src="" alt="" />
+            <div className="image">
+              <div className="left">
+                <img src="" alt="" />
+              </div>
+              <form id="uploadForm" encType="multipart/form-data">
+                <label className="btn input-btn" htmlFor="upload-resume">
+                  Select Profile
+                </label>
+                <span> </span>
+                <input
+                  onChange={handleUpload}
+                  style={{ display: "none" }}
+                  id="upload-resume"
+                  type="file"
+                />
+                <button className="btn" type="submit">
+                  Upload
+                </button>
+              </form>
             </div>
             <div className="right">
               <div className="greeting">
@@ -53,7 +110,9 @@ function Profile_User() {
               id="outlined-basic"
               variant="outlined"
             />
-            <button className="btn">Update Profile</button>
+            <button onClick={() => updateDetails()} className="btn">
+              Update Profile
+            </button>
           </div>
         </div>
       </div>

@@ -1,7 +1,31 @@
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 import Header from "../../ParentContComponents/Header";
 import Charts from "../chart/Charts";
 
 function Dashboard_Client() {
+  const [associationDetails, setAssociationDetails] = useState();
+  const [statsDetails, setStatsDetails] = useState();
+
+  // function to get statistics details
+  const fetchStatsDetails = async () => {
+    const resp = await fetch(/* some api call to fetch details */);
+    const data = resp.json();
+    setStatsDetails(data);
+  };
+
+  // function to get assiciation details
+  const fetchAssociationDetails = async () => {
+    const resp = await fetch(/* some api call to fetch details */);
+    const data = resp.json();
+    setAssociationDetails(data);
+  };
+
+  useEffect(() => {
+    fetchAssociationDetails();
+    fetchStatsDetails();
+  }, []);
+
   const applicants = [
     ["Task", "Percentage"],
     ["Approved", 5],
@@ -22,18 +46,26 @@ function Dashboard_Client() {
   };
   return (
     <>
-      <Header btn2="My Profile(C)" btn1="Pending Applications" typeOfBtn="Logout"
-      array={["My Dashboard(C)","My Profile(C)","Pending Applications","Logout"]}
+      <Header
+        btn2="My Profile(C)"
+        btn1="Pending Applications"
+        typeOfBtn="Logout"
+        array={[
+          "My Dashboard(C)",
+          "My Profile(C)",
+          "Pending Applications",
+          "Logout",
+        ]}
       />
-    <div className="admin-statistics">
-      <Charts
-        data={applicants}
-        title="Job Applicants"
-        options={applicant_title}
+      <div className="admin-statistics">
+        <Charts
+          data={applicants}
+          title="Job Applicants"
+          options={applicant_title}
         />
-      <Charts data={action_roles} title="Actions" options={action_title} />
-    </div>
-        </>
+        <Charts data={action_roles} title="Actions" options={action_title} />
+      </div>
+    </>
   );
 }
 

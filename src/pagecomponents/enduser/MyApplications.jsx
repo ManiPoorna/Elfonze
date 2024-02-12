@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from "react";
@@ -6,13 +7,13 @@ import FilterApplications from "./myapplications/FilterApplications";
 
 function MyApplications() {
   // const [applications, setApplicationsList] = useState([]);
-  // const [savedapplications, setSavedApplications] = useState([]);
-  // const [jobrolefilter, setJobRoleFilter] = useState();
-  // const [joblocationfilter, setJobLocationFilter] = useState();
-  // const [jobctcfilter, setJobCtcFilter] = useState();
-  // const [filterchange, setFilterChange] = useState();
+  const [savedapplications, setSavedApplications] = useState([]);
+  const [jobrolefilter, setJobRoleFilter] = useState();
+  const [joblocationfilter, setJobLocationFilter] = useState();
+  const [jobctcfilter, setJobCtcFilter] = useState();
+  const [filterchange, setFilterChange] = useState();
 
-  // //set filters of the appilication
+  //set filters of the appilication
   // const handleJobRoleFilter = (role) => {
   //   setJobRoleFilter(role);
   //   setFilterChange(Math.floor(Math.random() * 100));
@@ -26,29 +27,29 @@ function MyApplications() {
   //   setFilterChange(Math.floor(Math.random() * 100));
   // };
 
-  // //func call to delete job application applied by user
-  // const deleteUserJobApplication = async (application) => {
-  //   let templist = [...applications];
-  //   templist = templist.filter((item) => {
-  //     return item.id !== application.id;
-  //   });
-  //   setApplicationsList(templist);
-  //   setSavedApplications(templist);
-  //   const resp = await fetch(/* some api call to delete application */);
-  //   const data = await resp.json();
-  // };
+  //func call to delete job application applied by user
+  const deleteUserJobApplication = async (application) => {
+    let templist = [...applications];
+    templist = templist.filter((item) => {
+      return item.id !== application.id;
+    });
+    setApplicationsList(templist);
+    setSavedApplications(templist);
+    const resp = await fetch(/* some api call to delete application */);
+    const data = await resp.json();
+  };
 
-  // //useEffect with filterchange state
+  //useEffect with filterchange state
 
-  // //async call in useEffect to fetch job applications applied by user
-  // useEffect(() => {
-  //   const fetchJobApplications = async () => {
-  //     const resp = await fetch(/* some api call to fetch jobapplication */);
-  //     const data = await resp.json();
-  //     setApplicationsList(data);
-  //     setSavedApplications(data);
-  //   };
-  // }, []);
+  //async call in useEffect to fetch job applications applied by user
+  useEffect(() => {
+    const fetchJobApplications = async () => {
+      const resp = await fetch(/* some api call to fetch jobapplication */);
+      const data = await resp.json();
+      setApplicationsList(data);
+      setSavedApplications(data);
+    };
+  }, []);
 
   const applications = [1,2,3,4,5,6,7,8];
 
@@ -60,7 +61,7 @@ function MyApplications() {
         <h1>
           <u>My Applications</u>
         </h1>
-        <div className="d-flex select-sort">
+        {/* <div className="d-flex select-sort">
           <select className="select" name="" id="">
             <option value="">Jobe Role</option>
             <option value="sde">SDE</option>
@@ -81,7 +82,7 @@ function MyApplications() {
             <option value="rejected">Rejected</option>
             <option value="pending">Pending</option>
           </select>
-        </div>
+        </div> */}
         <div className="job-status-application-header">
           <div className="s-no">S.No</div>
           <div className="company-name">Company Name</div>

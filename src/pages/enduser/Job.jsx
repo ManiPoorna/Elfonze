@@ -10,12 +10,24 @@ function Job() {
   const navigate = useNavigate();
   const obj = useParams();
 
+  const onApply = async () => {
+    const resp = await fetch(/* some api call to apply for this job */);
+    const data = await resp.json();
+    console.log("Job Data => ",data)
+  };
+  const fetchJobDetails = async () => {
+    // const resp = await fetch(/* some api call to apply for this job */);
+    // const data = await resp.json();
+    // console.log("Job Desc=> ",data)
+  };
+  
   useEffect(() => {
+    fetchJobDetails();
     console.log(obj);
   }, [obj]);
 
   function handleJobDescClick() {
-    navigate("/user/manipoorna/jobs/:jobid");
+    navigate("/user/:userid/jobs/:jobid");
   }
 
   return (
@@ -29,10 +41,11 @@ function Job() {
           </div>
         </div>
         <div className="right">
-          <button className="btn">Apply</button>
+          
+          <button onClick={()=>onApply()} className="btn">Apply</button>
         </div>
       </div>
-      <div onClick={() => handleJobDescClick()} className="bottom">
+      <div className="bottom">
         <div className="position d-flex">
           <div>
             <BusinessCenterIcon />

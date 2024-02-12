@@ -37,20 +37,19 @@
   margin: 3rem;
 }
 
-
 /*  Profile responsive design  */
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .profile-page{
+  .profile-page {
     margin: 1rem 10px;
     padding: 1rem;
   }
-  .profile-page .top{
-    gap :1rem;
+  .profile-page .top {
+    gap: 1rem;
   }
   .profile-page .top .left {
     height: 120px;
   }
-  .greeting h1{
+  .greeting h1 {
     font-size: 18px;
   }
   .delete-account {
@@ -60,7 +59,8 @@
 }
 
 /* applccaiton styling */
-.application,.application-admin {
+.application,
+.application-admin {
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -68,11 +68,12 @@
   width: 100%;
   margin-top: 10px;
   background-color: #f6fff8;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
-.eye-icon{
-  /* padding: 17px; */
+.eye-icon {
   position: absolute;
+  cursor: pointer;
   left: -20px;
 }
 .application .checkbox input {
@@ -88,10 +89,11 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .application{
+  .application {
     padding: 5px 6px;
   }
-  .application .name h3,.application .percentage h4{
+  .application .name h3,
+  .application .percentage h4 {
     font-size: 13px;
     margin-left: 10px;
   }
@@ -101,7 +103,6 @@
   }
 }
 
-
 /* Client roles styling */
 .client-roles {
   width: 90%;
@@ -109,7 +110,7 @@
   background-color: #fff;
   padding: 1rem;
 }
-.application-footer{
+.application-footer {
   padding: 10px 3rem;
   position: fixed;
   bottom: 0;
@@ -122,13 +123,13 @@
   box-shadow: 0px -3px 5px 0px #00000017;
   background-color: #fff;
 }
-.application-footer .left{
+.application-footer .left {
   display: flex;
   gap: 10px;
   justify-content: space-between;
   align-items: center;
 }
-.application-footer .btns{
+.application-footer .btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,43 +138,42 @@
 
 /* Application responsive styling */
 @media screen and (min-width: 320px) and (max-width: 425px) {
-  .application-footer{
+  .application-footer {
     top: 0;
     gap: 1rem;
     padding: 0px 1rem !important;
     height: 80px !important;
   }
-  .application-footer .left h2{
+  .application-footer .left h2 {
     font-size: 16px;
   }
-  .btn{
+  .btn {
     font-size: 12px;
     padding: 6px;
   }
-  .client-roles{
+  .client-roles {
     margin: 0rem auto 10px auto !important;
   }
   .application-footer .btns {
     gap: 10px !important;
   }
-  .application-footer .left{
+  .application-footer .left {
     flex-direction: column;
   }
-  .comment-box{
+  .comment-box {
     width: 350px !important;
   }
 }
 
-
 /* Comment box styling */
-.comment-box{
+.comment-box {
   margin: auto auto;
   margin-top: 5rem;
   width: 500px;
   padding: 2.5rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-#reject{
-  width : 20px;
-  height : 20px;
+#reject {
+  width: 20px;
+  height: 20px;
 }

@@ -3,6 +3,16 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import Header from "../../ParentContComponents/Header";
 
 const Expandedjob = () => {
+
+  const onApply = async () => {
+    const resp = await fetch(/* some api call to apply for this job */);
+    const data = await resp.json();
+    console.log("Job Data => ",data)
+  };
+
+  
+
+
   return (
     <>
       <Header btn1="Find Jobs" btn2="My Dashboard" typeOfBtn="Logout"/>
@@ -16,7 +26,7 @@ const Expandedjob = () => {
             </div>
           </div>
           <div className="right">
-            <button className="btn">Apply</button>
+            <button onClick={()=>onApply()} className="btn">Apply</button>
           </div>
         </div>
         <div className="bottom">

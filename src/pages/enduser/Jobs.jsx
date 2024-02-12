@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 import Job from "./Job";
@@ -7,12 +8,20 @@ import Header from "../../ParentContComponents/Header";
 
 function Jobs() {
   const obj = useParams();
+  
+  const listOfJobs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const [jobsList, setJobsList] = useState([]);
+  const fetchJobList = async () => {
+    // const resp = await fetch(/* some api call to apply for this job */);
+    // const data = await resp.json();
+    // console.log("All Jobs list => ", data)
+  };
 
   useEffect(() => {
+    fetchJobList();
     console.log(obj);
   }, [obj]);
 
-  const listOfJobs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <>

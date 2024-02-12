@@ -2,9 +2,31 @@
 import { useNavigate } from "react-router-dom";
 import Header from "../../ParentContComponents/Header";
 import Charts from "../chart/Charts";
+import { useEffect, useState } from "react";
 
 function Dashboard_Admin() {
   const navigate = useNavigate();
+
+  const [organisationdetails, setOrganisationDetails] = useState();
+  const [adminStats, setAdminStats] = useState();
+  //async call in useEffect to fetch organisation details of admin
+  const fetchOrganisationDetails = async () => {
+    const resp = await fetch(/* some api call to fetch details */);
+    const data = resp.json();
+    setOrganisationDetails(data);
+  };
+
+  const fetchAdminStats = async () => {
+    const resp = fetch(/* someapi call to fetch stats */);
+    const data = resp.json();
+    setAdminStats(data);
+  };
+
+  useEffect(() => {
+    // fetchOrganisationDetails();
+    // fetchAdminStats();
+  }, []);
+
   const all_roles = [
     ["Task", "Percentage"],
     ["SDE", 5],
@@ -24,8 +46,6 @@ function Dashboard_Admin() {
   const recruiter_title = {
     title: "Recruiters",
   };
-
-  
 
   return (
     /* build stats and just insert the data through stats */

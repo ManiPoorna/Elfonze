@@ -1,11 +1,27 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Header from "../../ParentContComponents/Header";
 import Pendingclient from "./Pendingclient";
 
 function Clients() {
   const [type, setType] = useState("approve");
   const clientReq = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
+
+  const [tobeapprovedlist, setToBeApprovedList] = useState([]);
+
+  const fetchClients_Approve = async () => {
+    const resp = await fetch(/* some api call to fetch clients list */);
+    const data = await resp.json();
+
+    setToBeApprovedList(data);
+  };
+
+  useEffect(() => {
+    fetchClients_Approve();
+  }, []);
+
+
+
   return (
     <>
       <Header
@@ -19,13 +35,14 @@ function Clients() {
           onClick={() => setType("approve")}
           className={type === "approve" ? "btn active" : "btn"}>
           Approve
-        </button>{" "}
-        <span></span>
+        </button>
+        <span> </span>
         <button
           onClick={() => setType("manage")}
           className={type === "manage" ? "btn active" : "btn"}>
           Manage
         </button>
+
         <div className="roles-admin">
           {type && type === "approve"
             ? clientReq.map((client, index) => (

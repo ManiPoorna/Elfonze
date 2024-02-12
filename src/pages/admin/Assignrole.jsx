@@ -1,6 +1,16 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 
-const Assignrole = ({person}) => {
+const Assignrole = ({ person }) => {
+
+  // funtion to manage roles
+  const sendAssignedRole = async (permission) => {
+    // console.log(permission)
+    const resp = await fetch(/* some api call to assign role */);
+    /*  */
+    const data = await resp.json();
+  };
+
   return (
     <div className="application-admin">
       <div className="img">
@@ -13,12 +23,11 @@ const Assignrole = ({person}) => {
         <h4>UI Designer</h4>
       </div>
       <div className="recruit-approve">
-        <select className="dropdown" name="" id="">
-          <option value="approve">Roles</option>
+        <select onChange={(e)=>sendAssignedRole(e.target.value)} className="dropdown" >
+          <option value="">Roles</option>
           <option value="approve">Approve</option>
           <option value="review">Review</option>
           <option value="comment">Comment</option>
-          <option value="all">All</option>
         </select>
       </div>
     </div>
